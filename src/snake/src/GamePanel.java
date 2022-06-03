@@ -11,19 +11,20 @@ import java.util.Random;
 
 public class GamePanel extends JPanel implements ActionListener, KeyListener {
 
-    private int[] snakexlength = new int[750];
-    private int[] snakeylength = new int[750];
+    public int[] snakexlength = new int[750];
+    public int[] snakeylength = new int[750];
     private int lenghtOfSnake = 3;
 
     private Random random = new Random();
-    private int pointX,pointY;
-    private boolean left = false;
-    private boolean right = true;
-    private boolean up = false;
-    private boolean down = false;
+    public int pointX;
+    public int pointY;
+    public boolean left = false;
+    public boolean right = true;
+    public boolean up = false;
+    public boolean down = false;
     private int moves = 0;
-    private int score = 0;
-    private boolean gameOver = false;
+    public int score = 0;
+    public boolean gameOver = false;
 
     private int[] xPos = {25,50,75,100,125,150,175,200,225,250,275,300,325,350,375,400,425,450,475,500,525,550,575,600,625,650,675,700,725,750,775,800,825,850};
     private int[] yPos = {75,100,125,150,175,200,225,250,275,300,325,350,375,400,425,450,475,500,525,550,575,600,625};
@@ -40,7 +41,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
     private Timer timer;
     private int delay = 100;
 
-GamePanel(){
+public GamePanel(){
 
     addKeyListener(this);
     setFocusable(true);
@@ -68,6 +69,7 @@ GamePanel(){
             snakexlength[0]=100;
             snakexlength[1]=75;
             snakexlength[2]=50;
+
 
             snakeylength[0]=100;
             snakeylength[1]=100;
@@ -191,6 +193,7 @@ GamePanel(){
 
         pointX=xPos[random.nextInt(34)];
         pointY=yPos[random.nextInt(23)];
+
 
         for(int i=lenghtOfSnake - 1;i>=0;i--){
             if(snakexlength[i]==pointX && snakeylength[i]==pointY){
