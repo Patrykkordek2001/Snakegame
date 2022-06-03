@@ -13,7 +13,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 
     public int[] snakexlength = new int[750];
     public int[] snakeylength = new int[750];
-    private int lenghtOfSnake = 3;
+    public int lenghtOfSnake = 3;
 
     private Random random = new Random();
     public int pointX;
@@ -74,6 +74,30 @@ public GamePanel(){
             snakeylength[0]=100;
             snakeylength[1]=100;
             snakeylength[2]=100;
+
+
+            //gpl.snakexlength[0]=275;
+            //gpl.snakexlength[1]=250;
+            //gpl.snakexlength[2]=225;
+            //gpl.snakexlength[3]=200;
+            //gpl.snakexlength[4]=175;
+            //gpl.snakexlength[5]=150;
+            //gpl.snakexlength[6]=125;
+            //gpl.snakexlength[7]=100;
+            //gpl.snakexlength[8]=75;
+            //gpl.snakexlength[9]=50;
+//
+            //gpl.snakeylength[0]=100;
+            //gpl.snakeylength[1]=100;
+            //gpl.snakeylength[2]=100;
+            //gpl.snakeylength[3]=100;
+            //gpl.snakeylength[4]=100;
+            //gpl.snakeylength[5]=100;
+            //gpl.snakeylength[6]=100;
+            //gpl.snakeylength[7]=100;
+            //gpl.snakeylength[8]=100;
+            //gpl.snakeylength[9]=100;
+            //gpl.lenghtOfSnake = 10;
         }
 
         if(left){
