@@ -1,10 +1,8 @@
 import org.junit.jupiter.api.Test;
 import snake.src.GamePanel;
-
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.util.concurrent.TimeUnit;
-
 import static java.lang.Thread.sleep;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -14,6 +12,7 @@ public class SnakeGameTests {
 
     @Test
     void testMoveDown() {
+        /** Simulate pressing the down arrow key **/
 
             GamePanel gpl = new GamePanel();
             KeyEvent key = new KeyEvent(gpl, KeyEvent.KEY_PRESSED, System.currentTimeMillis(), 0,  KeyEvent.VK_DOWN);
@@ -27,6 +26,7 @@ public class SnakeGameTests {
     }
     @Test
     void testMoveRight() {
+        /** Simulate pressing the right arrow key **/
 
         GamePanel gpl = new GamePanel();
         KeyEvent key = new KeyEvent(gpl, KeyEvent.KEY_PRESSED, System.currentTimeMillis(), 0,  KeyEvent.VK_RIGHT);
@@ -40,6 +40,7 @@ public class SnakeGameTests {
     }
     @Test
     void testMoveUP() {
+        /** Simulate pressing the up arrow key **/
 
         GamePanel gpl = new GamePanel();
         KeyEvent key = new KeyEvent(gpl, KeyEvent.KEY_PRESSED, System.currentTimeMillis(), 0,  KeyEvent.VK_UP);
@@ -51,9 +52,25 @@ public class SnakeGameTests {
 
 
     }
+    @Test
+    void testReserSpace() {
+        /** Simulate pressing the space key to restart**/
+
+        GamePanel gpl = new GamePanel();
+        KeyEvent key = new KeyEvent(gpl, KeyEvent.KEY_PRESSED, System.currentTimeMillis(), 0,  KeyEvent.VK_SPACE);
+        gpl.getKeyListeners()[0].keyPressed(key);
+        assertEquals(0,gpl.score);
+        assertTrue(gpl.right);
+        assertFalse(gpl.gameOver);
+        assertEquals(3,gpl.lenghtOfSnake);
+        assertEquals(0,gpl.moves);
+
+    }
 
     @Test
     void testCollidesWithPoint() throws InterruptedException {
+        /** Testing score system when snake collides with point **/
+
         GamePanel gpl = new GamePanel();
         int score_before_point = gpl.score;
         gpl.snakexlength[0]=100;
@@ -72,6 +89,8 @@ public class SnakeGameTests {
     }
     @Test
     void testCollidesWithBody() throws InterruptedException {
+        /** Testing gameover() method when snake collides with body **/
+
         GamePanel gpl = new GamePanel();
         gpl.snakexlength[0]=275;
         gpl.snakexlength[1]=250;
@@ -97,13 +116,6 @@ public class SnakeGameTests {
         Thread.sleep(100);
         assertTrue(gpl.gameOver);
     }
-
-
-
-
-
-
-
 
 
     }

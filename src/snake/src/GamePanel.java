@@ -22,7 +22,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
     public boolean right = true;
     public boolean up = false;
     public boolean down = false;
-    private int moves = 0;
+    public int moves = 0;
     public int score = 0;
     public boolean gameOver = false;
 
@@ -52,7 +52,6 @@ public GamePanel(){
 }
 
 
-
     @Override
     public void paint(Graphics g) {
         super.paint(g);
@@ -66,38 +65,14 @@ public GamePanel(){
         g.fillRect(25,75,850,575);
 
         if(moves == 0){
+
             snakexlength[0]=100;
             snakexlength[1]=75;
             snakexlength[2]=50;
-
-
             snakeylength[0]=100;
             snakeylength[1]=100;
             snakeylength[2]=100;
 
-
-            //gpl.snakexlength[0]=275;
-            //gpl.snakexlength[1]=250;
-            //gpl.snakexlength[2]=225;
-            //gpl.snakexlength[3]=200;
-            //gpl.snakexlength[4]=175;
-            //gpl.snakexlength[5]=150;
-            //gpl.snakexlength[6]=125;
-            //gpl.snakexlength[7]=100;
-            //gpl.snakexlength[8]=75;
-            //gpl.snakexlength[9]=50;
-//
-            //gpl.snakeylength[0]=100;
-            //gpl.snakeylength[1]=100;
-            //gpl.snakeylength[2]=100;
-            //gpl.snakeylength[3]=100;
-            //gpl.snakeylength[4]=100;
-            //gpl.snakeylength[5]=100;
-            //gpl.snakeylength[6]=100;
-            //gpl.snakeylength[7]=100;
-            //gpl.snakeylength[8]=100;
-            //gpl.snakeylength[9]=100;
-            //gpl.lenghtOfSnake = 10;
         }
 
         if(left){
